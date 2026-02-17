@@ -71,7 +71,7 @@ class InMemoryRepository:
             results = [x for x in results if modalidade in normalize_text(x.modalidade)]
         if filters.status:
             status = normalize_text(filters.status)
-            results = [x for x in results if status in normalize_text(x.status)]
+            results = [x for x in results if status == normalize_text(x.status)]
         if filters.valor_min is not None:
             results = [x for x in results if x.valor_unitario >= filters.valor_min]
         if filters.valor_max is not None:
